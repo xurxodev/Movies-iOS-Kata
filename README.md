@@ -13,7 +13,7 @@ Master branch contains already solved katas, exists a branch for every kata.
 
 This repository contains an iOS application to show movies information:
 
-## ![](/art/movies.gif)
+![](/Art/movies.gif)
 
 The application initial state without dependency injection is ready to just start refactoring. 
 
