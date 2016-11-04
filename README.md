@@ -35,9 +35,6 @@ The recommendation for this exercise is:
 
 There are some links which can be useful to finish these tasks:
 
-* [Official docs Dagger 2](https://google.github.io/dagger/)
-* [Dependency Injection with Dagger 2](https://guides.codepath.com/android/Dependency-Injection-with-Dagger-2)
-
 ##Developed By
 
 * Jorge Sánchez Fernández aka [xurxodev](https://twitter.com/xurxodev)
