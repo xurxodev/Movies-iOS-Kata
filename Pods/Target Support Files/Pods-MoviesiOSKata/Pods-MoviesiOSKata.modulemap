@@ -1,0 +1,6 @@
+framework module Pods_MoviesiOSKata {
+  umbrella header "Pods-MoviesiOSKata-umbrella.h"
+
+  export *
+  module * { export * }
+}
