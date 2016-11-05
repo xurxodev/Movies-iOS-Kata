@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DiskMovieRepository:MoviesRepository {
+class DiskMovieRepository {
     
     func getMovies() -> [Movie]{
         var movies:[Movie] = []
