@@ -13,7 +13,7 @@ Master branch contains already solved katas, exists a branch for every kata.
 
 This repository contains an iOS application to show movies information:
 
-## ![](/art/movies.gif)
+![](/Art/movies.gif)
 
 The application initial state without dependency injection is ready to just start refactoring. 
 
@@ -34,9 +34,6 @@ The recommendation for this exercise is:
 ## Documentation
 
 There are some links which can be useful to finish these tasks:
-
-* [Official docs Dagger 2](https://google.github.io/dagger/)
-* [Dependency Injection with Dagger 2](https://guides.codepath.com/android/Dependency-Injection-with-Dagger-2)
 
 ##Developed By
 
