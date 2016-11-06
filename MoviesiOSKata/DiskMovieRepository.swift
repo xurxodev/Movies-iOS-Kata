@@ -8,9 +8,9 @@
 
 import Foundation
 
-class DiskMovieRepository:MoviesRepository {
+class DiskMovieRepository:MovieRepository {
     
-    func getMovies() -> [Movie]{
+    func get() -> [Movie]{
         var movies:[Movie] = []
 
         let url = NSBundle.mainBundle().URLForResource("Movies", withExtension: "json")

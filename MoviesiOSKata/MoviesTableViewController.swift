@@ -18,7 +18,7 @@ class MovieTableViewCell: UITableViewCell {
 
 class MoviesTableViewController: UITableViewController {
     
-    var movieRepository:DiskMovieRepository!
+    var movieRepository:MovieRepository!
     var movies = [Movie]()
     
     override func viewDidLoad() {
@@ -29,9 +29,12 @@ class MoviesTableViewController: UITableViewController {
         loadMovies()
     }
     
+    func setMovieRepository(movieRepository:MovieRepository){
+        self.movieRepository = movieRepository
+    }
+    
     func loadMovies() {
-        movieRepository = DiskMovieRepository()
-        movies = DiskMovieRepository().getMovies()
+        movies = movieRepository.get()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

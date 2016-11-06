@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol MoviesRepository {
-    func getMovies() -> [Movie]
+protocol MovieRepository {
+    func get() -> [Movie]
 }
