@@ -31,10 +31,6 @@ The recommendation for this exercise is:
 3. Inject dependencies from one entry point. 
 4. Execute the app and verify that all is right
 
-## Documentation
-
-There are some links which can be useful to finish these tasks:
-
 ##Developed By
 
 * Jorge Sánchez Fernández aka [xurxodev](https://twitter.com/xurxodev)
