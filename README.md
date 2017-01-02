@@ -1,4 +1,4 @@
-# Movies-iOS-Kata
+# Movies-iOS-Kata Part 1
 Movies Android kata for practice Best Practices in iOS implemented by Jorge Sánchez (Xurxodev)
 
 - We are here to practice Dependency Injection.
@@ -30,13 +30,6 @@ The recommendation for this exercise is:
 2. Identify singleton dependencies.
 3. Inject dependencies from one entry point. 
 4. Execute the app and verify that all is right
-
-## Documentation
-
-There are some links which can be useful to finish these tasks:
-
-* [Official docs Dagger 2](https://google.github.io/dagger/)
-* [Dependency Injection with Dagger 2](https://guides.codepath.com/android/Dependency-Injection-with-Dagger-2)
 
 ##Developed By
 
