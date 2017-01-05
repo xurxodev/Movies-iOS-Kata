@@ -28,10 +28,10 @@ class AppDependencies{
         movieRepository = DiskMovieRepository()
     }
     
-    func moviesTableViewController(_ window: UIWindow) -> MoviesTableViewController {
+    func moviesTableViewController(_ window: UIWindow) -> MoviesViewController {
         let navigationController = navigationControllerFromWindow(window)
         
-        let moviesTableViewController = navigationController.visibleViewController as! MoviesTableViewController
+        let moviesTableViewController = navigationController.visibleViewController as! MoviesViewController
         
         return moviesTableViewController
     }

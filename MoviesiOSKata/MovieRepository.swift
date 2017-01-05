@@ -1,9 +1,9 @@
 //
-//  MoviesRepository.swift
+//  MovieRepository.swift
 //  MoviesiOSKata
 //
-//  Created by Jorge Sánchez on 3/11/16.
-//  Copyright © 2016 xurxodev. All rights reserved.
+//  Created by Jorge Sánchez on 5/1/17.
+//  Copyright © 2017 xurxodev. All rights reserved.
 //
 
 import Foundation
