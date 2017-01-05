@@ -17,7 +17,7 @@ class AppDependencies{
         configureDependencies()
     }
     
-    func installRootViewControllerIntoWindow(window: UIWindow) {
+    func installRootViewControllerIntoWindow(_ window: UIWindow) {
 
         let viewController = moviesTableViewController(window)
         
@@ -28,7 +28,7 @@ class AppDependencies{
         movieRepository = DiskMovieRepository()
     }
     
-    func moviesTableViewController(window: UIWindow) -> MoviesTableViewController {
+    func moviesTableViewController(_ window: UIWindow) -> MoviesTableViewController {
         let navigationController = navigationControllerFromWindow(window)
         
         let moviesTableViewController = navigationController.visibleViewController as! MoviesTableViewController
@@ -36,7 +36,7 @@ class AppDependencies{
         return moviesTableViewController
     }
     
-    func navigationControllerFromWindow(window: UIWindow) -> UINavigationController {
+    func navigationControllerFromWindow(_ window: UIWindow) -> UINavigationController {
         let navigationController = window.rootViewController as! UINavigationController
         return navigationController
     }

@@ -29,7 +29,7 @@ class MoviesTableViewController: UITableViewController {
         loadMovies()
     }
     
-    func setMovieRepository(movieRepository:MovieRepository){
+    func setMovieRepository(_ movieRepository:MovieRepository){
         self.movieRepository = movieRepository
     }
     
@@ -37,21 +37,21 @@ class MoviesTableViewController: UITableViewController {
         movies = movieRepository.get()
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
     
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath)as! MovieTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)as! MovieTableViewCell
         
         let movie:Movie = movies[indexPath.item]
         cell.MovieTitleLabel.text = movie.title;
-        cell.MovieImageView.sd_setImageWithURL(NSURL(string: movie.image!))
+        cell.MovieImageView.sd_setImage(with: URL(string: movie.image!))
     
         
         return cell

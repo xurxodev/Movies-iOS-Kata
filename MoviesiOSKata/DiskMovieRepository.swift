@@ -13,11 +13,11 @@ class DiskMovieRepository:MovieRepository {
     func get() -> [Movie]{
         var movies:[Movie] = []
 
-        let url = NSBundle.mainBundle().URLForResource("Movies", withExtension: "json")
-        let data = NSData(contentsOfURL: url!)
+        let url = Bundle.main.url(forResource: "Movies", withExtension: "json")
+        let data = try? Data(contentsOf: url!)
         
         do {
-            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
             
             if let moviesjson = json as? [[String: AnyObject]] {
                 for moviejson in moviesjson {
