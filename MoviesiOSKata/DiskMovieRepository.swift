@@ -32,6 +32,12 @@ class DiskMovieRepository {
             print("error serializing JSON: \(error)")
         }
         
+        simulateDelay()
+        
         return movies;
+    }
+    
+    func simulateDelay() -> Void{
+        sleep(2)
     }
 }

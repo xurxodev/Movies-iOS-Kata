@@ -9,11 +9,16 @@
 import UIKit
 import SDWebImage
 
-class MovieTableViewCell: UITableViewCell {
+
+
+class MovieTableViewHeader: UITableViewCell {
     
-    @IBOutlet weak var MovieTitleLabel: UILabel!
+    @IBOutlet weak var TitleLabel: UILabel!
     
-    @IBOutlet weak var MovieImageView: UIImageView!
+    @IBAction func RefreshButton(_ sender: UIButton) {
+    }
+    
+    
 }
 
 class MoviesTableViewController: UITableViewController {
@@ -25,14 +30,18 @@ class MoviesTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.tableView.tableFooterView = UIView()
+        self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedSectionHeaderHeight = 25
         
         loadMovies()
     }
     
     func loadMovies() {
-        movieRepository = DiskMovieRepository()
         movies = DiskMovieRepository().getMovies()
     }
+    
+
+
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -47,11 +56,19 @@ class MoviesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)as! MovieTableViewCell
         
         let movie:Movie = movies[indexPath.item]
-        cell.MovieTitleLabel.text = movie.title;
-        cell.MovieImageView.sd_setImage(with: URL(string: movie.image!))
+        cell.movieTitleLabel.text = movie.title;
+        cell.movieImageView.sd_setImage(with: URL(string: movie.image!))
     
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerCell")as! MovieTableViewHeader
+        
+        headerCell.TitleLabel.text = "Movies: " + String(movies.count)
+        
+        return headerCell
     }
     
 }
