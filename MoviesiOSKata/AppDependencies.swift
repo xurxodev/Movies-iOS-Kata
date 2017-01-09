@@ -12,6 +12,7 @@ import UIKit
 class AppDependencies{
     
     var movieRepository:MovieRepository!
+    var moviesPresenter: MoviesPresenter!
     
     init() {
         configureDependencies()
@@ -21,11 +22,12 @@ class AppDependencies{
 
         let viewController = moviesTableViewController(window)
         
-        viewController.setMovieRepository(movieRepository)
+        viewController.setMoviesPresenter(moviesPresenter)
     }
     
     func configureDependencies() {
         movieRepository = DiskMovieRepository()
+        moviesPresenter = MoviesPresenter(movieRepository: movieRepository)
     }
     
     func moviesTableViewController(_ window: UIWindow) -> MoviesViewController {

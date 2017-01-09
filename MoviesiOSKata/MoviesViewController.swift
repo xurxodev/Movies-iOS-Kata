@@ -9,9 +9,9 @@
 import UIKit
 import SDWebImage
 
-class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDataSource{
+class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, MoviesView{
 
-    var movieRepository:MovieRepository!
+    var moviesPresenter:MoviesPresenter!
     var movies = [Movie]()
     
     @IBOutlet weak var moviesTableView: UITableView!
@@ -19,11 +19,11 @@ class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDat
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBAction func refreshClicked(_ sender: UIButton) {
-        loadMovies()
+        moviesPresenter.onRefreshAction()
     }
     
-    func setMovieRepository(_ movieRepository:MovieRepository){
-        self.movieRepository = movieRepository
+    func setMoviesPresenter(_ moviesPresenter:MoviesPresenter){
+        self.moviesPresenter = moviesPresenter
     }
     
     override func viewDidLoad() {
@@ -32,35 +32,9 @@ class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDat
         moviesTableView.tableFooterView = UIView()
         moviesTableView.dataSource = self;
         
-        loadMovies()
-    }
-    
-    func loadMovies() {
-        loadingMovies()
-        
-        DispatchQueue.global(qos: .background).async {
-            self.movieRepository = DiskMovieRepository()
-            
-            self.movies = self.movieRepository.get()
-            
-            DispatchQueue.main.async {
-                self.loadedMovies()
-            }
-        }
-    }
-    
-    func loadingMovies(){
-        movies.removeAll()
-        moviesTableView.reloadData()
-        titleLabel.text = "loading ..."
-    }
-    
-    func loadedMovies(){
-        moviesTableView.reloadData()
-        titleLabel.text = "Movies: " + String(movies.count)
+        moviesPresenter.attachView(view: self)
     }
 
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
@@ -74,6 +48,24 @@ class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDat
         
         
         return cell
+    }
+    
+    func showMovies(movies: [Movie]) -> Void{
+        self.movies = movies
+        moviesTableView.reloadData()
+    }
+    
+    func clearMovies() ->  Void{
+        movies.removeAll()
+        moviesTableView.reloadData()
+    }
+    
+    func showLoadingText() ->  Void{
+        titleLabel.text = "loading ..."
+    }
+    
+    func showTotalMovies(count: Int) ->  Void{
+        titleLabel.text = "Movies: " + String(count)
     }
     
 
