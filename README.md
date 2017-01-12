@@ -1,8 +1,9 @@
-# Movies-iOS-Kata Part 1
+# Movies-Android-Kata Part3
 Movies Android kata for practice Best Practices in iOS implemented by Jorge Sánchez (Xurxodev)
 
-- We are here to practice Dependency Injection.
-- We are going to use Poors man Dependency Injection.
+Kata 3
+
+- We are here to practice Clean architecture with domain and data layers.
 - We are going to practice pair programming.
 
 ## Considerations 
@@ -17,19 +18,26 @@ This repository contains an iOS application to show movies information:
 
 The application initial state without dependency injection is ready to just start refactoring. 
 
+
 ## Tasks
 
-Your task as iOS Developer is to **refactoring to inject dependencies**, only singleton dependencies.
+Your task as Android Developer is to **refactoring presentation layer to Model View Presenter**.
 The recommendation for this exercise is:
 
 * Before starting
-1. Fork this repository and Checkout `kata-di-movies` branch or download zip.
+1. Fork this repository and Checkout `kata_domain_data_movies` branch or download zip.
 3. Execute the application, explore it manually and make yourself familiar with the code.
 
-* To help you get started:     
-2. Identify singleton dependencies.
-3. Inject dependencies from one entry point. 
-4. Execute the app and verify that all is right
+* To help you get started:
+1. Identify domain (application logic and business logic)
+2. Identify domain boundaries
+3. Create usecases or interactors and entities.
+4. Refactoring activity or fragment, presenters.
+5. Execute the app and verify that all is right
+
+* Estra task if you feel with force :)
+1. Create movies detail screen according to clean architecture
+2. Create navigator for navigate from movies to movie
 
 ##Developed By
 
