@@ -8,13 +8,13 @@
 
 import Foundation
 
-class MoviesPresenter{
-    var movieRepository:MovieRepository
+class MoviesPresenter:GetMoviesUseCaseHandler{
+    var getMoviesUseCase:GetMoviesUseCase
     
     var view: MoviesView!
     
-    init(movieRepository:MovieRepository) {
-        self.movieRepository = movieRepository
+    init(getMoviesUseCase:GetMoviesUseCase) {
+        self.getMoviesUseCase = getMoviesUseCase
     }
     
     func attachView(view: MoviesView) -> Void {
@@ -23,27 +23,24 @@ class MoviesPresenter{
         loadMovies()
     }
     
-    
     func onRefreshAction() -> Void {
         loadMovies()
     }
     
     private func loadMovies() -> Void {
-        
-        var movies: [Movie]!
-        
         loadingMovies()
         
-        DispatchQueue.global(qos: .background).async {
-            self.movieRepository = DiskMovieRepository()
-            
-            movies = self.movieRepository.get()
-            
-            DispatchQueue.main.async {
-                self.loadedMovies(movies: movies)
-            }
-        }
+        getMoviesUseCase.execute(handler: self)
     }
+    
+    func onMoviesLoaded(movies: [Movie]) -> Void{
+        loadedMovies(movies: movies)
+    }
+    
+    func onConnectionError() ->  Void{
+        view.showConnectionError();
+    }
+    
     
     private func loadingMovies() -> Void {
         view.clearMovies()
@@ -55,3 +52,13 @@ class MoviesPresenter{
         view.showTotalMovies(count: movies.count)
     }
 }
+
+protocol MoviesView {
+    func showMovies(movies: [Movie]) -> Void
+    func clearMovies() ->  Void
+    func showLoadingText() ->  Void
+    func showTotalMovies(count: Int) ->  Void
+    func showConnectionError() ->  Void
+}
+
+

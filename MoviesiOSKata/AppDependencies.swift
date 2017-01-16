@@ -13,6 +13,7 @@ class AppDependencies{
     
     var movieRepository:MovieRepository!
     var moviesPresenter: MoviesPresenter!
+    var getMoviesUseCase: GetMoviesUseCase!
     
     init() {
         configureDependencies()
@@ -27,7 +28,8 @@ class AppDependencies{
     
     func configureDependencies() {
         movieRepository = DiskMovieRepository()
-        moviesPresenter = MoviesPresenter(movieRepository: movieRepository)
+        getMoviesUseCase = GetMoviesUseCase(movieRepository: movieRepository)
+        moviesPresenter = MoviesPresenter(getMoviesUseCase: getMoviesUseCase)
     }
     
     func moviesTableViewController(_ window: UIWindow) -> MoviesViewController {

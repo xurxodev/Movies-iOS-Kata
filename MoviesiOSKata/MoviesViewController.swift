@@ -68,5 +68,7 @@ class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDat
         titleLabel.text = "Movies: " + String(count)
     }
     
-
+    func showConnectionError() ->  Void{
+        titleLabel.text = "Has occurred a problem with the network, try next please";
+    }
 }
