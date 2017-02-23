@@ -10,7 +10,7 @@ Kata 2
 
 Master branch contains already solved katas, exists a branch for every kata.
 
-## Getting started
+## Getting started 
 
 This repository contains an iOS application to show movies information:
 
@@ -18,22 +18,25 @@ This repository contains an iOS application to show movies information:
 
 Initial state in this branch is without presenter is ready for refactoring to mvp.
 
-## Tasks
+## Tasks 
 
 Your task as Android Developer is to **refactoring presentation layer to Model View Presenter**.
 The recommendation for this exercise is:
 
 * Before starting
+
 1. Fork this repository and Checkout `kata-mvp-movies` branch or download zip.
 3. Execute the application, explore it manually and make yourself familiar with the code.
 
 * To help you get started:
+
 1. Identify presentation and view logic
 2. Create presenter for current view and its view abstraction.
 3. Refactoring activity or fragment for implement view abstraction
 4. Execute the app and verify that all is right
 
 * Estra task if you feel with force :)
+
 1. Create movies detail screen according to mvp pattern
 2. Create navigator for navigate from movies to movie
 
