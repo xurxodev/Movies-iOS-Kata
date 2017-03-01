@@ -32,6 +32,10 @@ class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDat
         moviesTableView.tableFooterView = UIView()
         moviesTableView.dataSource = self;
         
+        moviesTableView.accessibilityIdentifier = "MoviesTableView";
+        moviesTableView.accessibilityLabel = "MoviesTableView";
+        
+        
         moviesPresenter.attachView(view: self)
     }
 
