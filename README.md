@@ -37,11 +37,11 @@ The recommendation for this exercise is:
     1. First create tests without Robot Pattern
     2. After refactoring tests to Robot Pattern
 
-##Developed By
+## Developed By
 
 * Jorge Sánchez Fernández aka [xurxodev](https://twitter.com/xurxodev)
 
-##License
+## License
 
 
 Copyright 2017 Jorge Sánchez Fernández
