@@ -1,5 +1,6 @@
+![](http://xurxodev.com/content/images/2017/04/xurxodev-readme.png) 
 # Movies-iOS-Kata 
-Movies Android kata for practice Best Practices in iOS implemented by Jorge Sánchez (Xurxodev)
+Movies Android kata for practice Clean Architecture and best practices in iOS implemented by Jorge Sánchez (Xurxodev)
 
 ## Considerations 
 
